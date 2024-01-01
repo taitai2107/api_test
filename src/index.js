@@ -9,6 +9,9 @@ bodyConfig.configBodyPartser(express, app);
 const { configCors } = require("../src/config/cors");
 configCors(app);
 const PORT = process.env.PORT || 3000;
+app.use("/", (req, res) => {
+  res.send("ok");
+});
 UseRouter(app);
 // testConnect();
 app.listen(PORT, () => {
